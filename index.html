@@ -1,0 +1,136 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Libero</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div id="webapp_cover">
+                <div id="menu_button">
+                  <input type="checkbox" id="menu_checkbox">
+                  <label for="menu_checkbox" id="menu_label">
+                    <div id="menu_text_bar"></div>
+                  </label>
+                </div>
+            </div>
+            <h1>LIBERO</h1>
+            <div>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">NEWS</a></li>
+                    <li><a href="">EVENTS</a></li>
+                    <li><a href="">WORLD</a></li>
+                </ul>
+            </div>
+            <div class="searchdiv">
+                <input class="searchInput" type="text">
+                <img class="search" src="img/search.png" alt="">
+            </div>
+        </header>
+
+        <div id="body">
+            <div class="formdiv">
+                <form action="">
+                    <h1>How do you feel about recycling?</h1>
+                    <div class="labeldiv" id="asdd1">
+                        <label for="postcode">Postcode:</label>
+                        <input style="width: 30% !important;" type="text">
+                    </div>
+                    <div>
+                        <label for="radio">Should the government start enforcing garbage <br>separation and recycling schemes across your area?</label>
+                        <div class="options">
+                            <div onclick="yes()" class="option yes">
+                                <input type="radio" id="yes" name="poll" value="yes">
+                                <label for="yes">Yes</label>
+                            </div>
+                            <div onclick="no()" class="option no">
+                                <input type="radio" id="no" name="poll" value="no">
+                                <label for="no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="labeldiv" id="asdd">
+                        <label for="email">E-mail Address:</label>
+                        <input type="text">
+                    </div>
+                    <div class="labeldiv" id="asdd">
+                        <label for="number">Mobile Number:</label>
+                        <input type="text">
+                    </div>
+                    <button>Submit</button>
+                </form>
+            </div>
+            <div class="picdiv">
+                <h2>Phasellus augue <br>sapien</h2>
+                <img src="img/1b.jpeg" alt="">
+                <p>Phasellus augue sapien, <br>aliquam sit amet mauris</p>
+                <img src="img/1c.jpeg" alt="">
+                <p>Sed facilisis volutpat <br>turpis eu viverra</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footerdiv">
+                <div>
+                    <p class="footertitle">Rutrum</p>
+                    <br>
+                    <p>Fermentum</p>
+                    <p>Neque</p>
+                    <p>Consequat</p>
+                </div>
+                <div>
+                    <p class="footertitle">Malesuada</p>
+                    <br>
+                    <p>Tellus</p>
+                    <p>Condimentum</p>
+                    <p>Consectetur</p>
+                </div>
+                <div>
+                    <p class="footertitle">Pellentesque</p>
+                    <br>
+                    <p>Habitant</p>
+                    <p>Morbi</p>
+                    <p>Tristique</p>
+                </div>
+                <div>
+                    <p class="footertitle">Quisque</p>
+                    <br>
+                    <p>Pharetra</p>
+                    <p>Volutpat</p>
+                    <p>Tristique</p>
+                </div>
+                <div>
+                    <div style="display: flex; gap: 10px;">
+                        <div class="circle"></div>
+                        <p>Phasellus</p>
+                    </div>
+                    <br>
+                    <div style="display: flex; gap: 10px;">
+                        <div class="circle"></div>
+                        <p>Augue</p>
+                    </div>
+                    <br>
+                    <div style="display: flex; gap: 10px;">
+                        <div class="circle"></div>
+                        <p>Sapien</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script>
+        document.querySelector('.search').addEventListener('click', function() {
+            var searchInput = document.querySelector('.searchInput')
+            searchInput.style.display = "block"
+        })
+
+        document.getElementById('pollForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const pollValue = formData.get('poll');
+            alert(`You selected: ${pollValue}`);
+        });
+    </script>
+</html>
